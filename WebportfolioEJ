@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan James A. Legria | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111111;
+            color: white;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+        header {
+            background-color: #181818;
+            padding: 18px 0;
+            border-bottom: 1px solid #333333;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #dba04d;
+        }
+        .nav-links button {
+            background: none;
+            border: none;
+            color: white;
+            margin-left: 18px;
+            font-family: inherit;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .nav-links button:hover,
+        .nav-links button.active {
+            color: #dba04d;
+        }
+        .page {
+            display: none;
+            min-height: 80vh;
+            padding: 60px 0;
+        }
+        .page.active {
+            display: block;
+        }
+        .section-title {
+            text-align: center;
+            color: #dba04d;
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #dba04d;
+            color: #111111;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 5px;
+            border: none;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: white;
+        }
+        .home-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .home-text,
+        .home-photo {
+            flex: 1;
+        }
+        .home-text h1 {
+            font-size: 46px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        .home-text h2 {
+            color: #dba04d;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+        .home-text p {
+            color: #d0d0d0;
+            margin-bottom: 25px;
+        }
+        .home-photo img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid #333333;
+        }
+        .info-box {
+            background-color: #181818;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333333;
+            margin-bottom: 20px;
+        }
+        .info-box p {
+            color: #d0d0d0;
+            margin-bottom: 12px;
+        }
+        .simple-list {
+            color: #d0d0d0;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .simple-list li {
+            margin-bottom: 8px;
+        }
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background-color: #181818;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333333;
+            text-align: center;
+        }
+        .card h3 {
+            color: #dba04d;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #d0d0d0;
+            font-size: 15px;
+        }
+        .project-card {
+            background-color: #181818;
+            border-radius: 12px;
+            border: 1px solid #333333;
+            overflow: hidden;
+        }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .project-card div {
+            padding: 20px;
+        }
+        .project-card h3 {
+            color: #dba04d;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: #d0d0d0;
+            font-size: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #181818;
+            color: #aaaaaa;
+            border-top: 1px solid #333333;
+        }
+        @media (max-width: 800px) {
+            nav,
+            .home-layout {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links button {
+                margin: 5px;
+            }
+            .home-text h1 {
+                font-size: 34px;
+            }
+            .card-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Ethan James</div>
+                <div class="nav-links">
+                    <button class="nav-button active" onclick="showPage('home', this)">Home</button>
+                    <button class="nav-button" onclick="showPage('about', this)">About</button>
+                    <button class="nav-button" onclick="showPage('skills', this)">Skills</button>
+                    <button class="nav-button" onclick="showPage('projects', this)">Projects</button>
+                    <button class="nav-button" onclick="showPage('contact', this)">Contact</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="page active">
+        <div class="container home-layout">
+            <div class="home-text">
+                <h1>Hello, I'm Ethan James A. Legria</h1>
+                <h2>Student Portfolio</h2>
+                <p>
+                    Welcome to my portfolio website. This site introduces who I am,
+                    what I can do, and some sample projects I enjoy making.
+                </p>
+                <p>
+                    I am interested in web design, editing, and creative digital work.
+                    I made this portfolio to practice arranging information on a webpage
+                    and to show my progress as a beginner.
+                </p>
+                <button class="button" onclick="showPage('contact', document.querySelectorAll('.nav-button')[4])">Contact Me</button>
+            </div>
+            <div class="home-photo">
+                <img src="EthanPhoto.jpg" alt="Photo of Ethan James A. Legria">
+            </div>
+        </div>
+    </section>
+    <section id="about" class="page">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="info-box">
+                <p>
+                    Hi! My name is Ethan James A. Legria. I am a student who is learning
+                    how to create simple websites using HTML, CSS, and a little JavaScript.
+                </p>
+                <p>
+                    I enjoy creative work like designing, editing, and making digital projects.
+                    This portfolio is one of my practice projects for improving my web design skills.
+                </p>
+                <p>
+                    My goal is to continue learning and make websites that are clean,
+                    organized, and easy for other people to use.
+                </p>
+                <p>
+                    I am still improving, but I enjoy learning step by step. I like trying
+                    new layouts, changing colors, and fixing small details until the page
+                    looks better.
+                </p>
+                <p>Some things about me:</p>
+                <ul class="simple-list">
+                    <li>I am interested in technology and creative design.</li>
+                    <li>I like learning by practicing and making simple projects.</li>
+                    <li>I want to become better at making clean and useful websites.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="page">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="card-list">
+                <div class="card">
+                    <h3>HTML</h3>
+                    <p>I use HTML to add headings, paragraphs, images, buttons, and sections. It is the main structure of my website.</p>
+                </div>
+                <div class="card">
+                    <h3>CSS</h3>
+                    <p>I use CSS to change colors, fonts, spacing, borders, and layouts. It helps make the website look more organized.</p>
+                </div>
+                <div class="card">
+                    <h3>JavaScript</h3>
+                    <p>I use simple JavaScript to make the navigation buttons interactive. It helps show and hide each page section.</p>
+                </div>
+                <div class="card">
+                    <h3>Editing</h3>
+                    <p>I enjoy editing photos and videos because it lets me be creative and improve how a project looks.</p>
+                </div>
+                <div class="card">
+                    <h3>Creativity</h3>
+                    <p>I like choosing colors, images, and layouts that match the theme of my work.</p>
+                </div>
+                <div class="card">
+                    <h3>Communication</h3>
+                    <p>I try to explain my ideas clearly and listen to feedback so I can improve my output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="page">
+        <div class="container">
+            <h2 class="section-title">Sample Projects</h2>
+            <div class="card-list">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Computer screen">
+                    <div>
+                        <h3>Personal Website</h3>
+                        <p>A simple website that introduces myself, my interests, and the skills I am learning in web design.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop" alt="Camera">
+                    <div>
+                        <h3>Photo Editing</h3>
+                        <p>A creative project where I practiced editing photos, adjusting colors, and improving the overall design.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop" alt="Video camera">
+                    <div>
+                        <h3>Video Project</h3>
+                        <p>A basic video project where I practiced storytelling, arranging clips, and adding simple effects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box" style="margin-top: 25px;">
+                <p>
+                    These projects are simple examples of the things I like doing. They
+                    show my interest in both design and technology, and they also help me
+                    practice being more patient and detailed with my work.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="page">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="info-box">
+                <p>
+                    If you want to ask about my portfolio or give suggestions, you can
+                    contact me using the details below.
+                </p>
+                <p>Email: ethanjamesalegria@gmail.com</p>
+                <p>Location: Philippines</p>
+                <p>Available for: school projects, creative activities, and simple website practice</p>
+                <p>Thank you for visiting my portfolio website!</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright 2026 | Ethan James A. Legria</p>
+    </footer>
+    <script>
+        function showPage(pageName, clickedButton) {
+            var pages = document.querySelectorAll('.page');
+            var buttons = document.querySelectorAll('.nav-button');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            document.getElementById(pageName).classList.add('active');
+            clickedButton.classList.add('active');
+        }
+    </script>
+</body>
+</html>
