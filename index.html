@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Computer Science Portfolio</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0a0f1f;
+color:white;
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0a0f1f,#1e3a8a);
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+.hero p{
+margin-top:15px;
+font-size:1.2rem;
+color:#cbd5e1;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#3b82f6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+section{
+padding:80px 10%;
+}
+
+h2{
+margin-bottom:20px;
+color:#60a5fa;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111827;
+padding:20px;
+border-radius:12px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.project{
+background:#111827;
+padding:20px;
+border-radius:12px;
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-5px);
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#111827;
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="hero">
+<h1>Your Name</h1>
+<p>Computer Science Student • Software Developer</p>
+<a href="#projects" class="btn">View My Work</a>
+</div>
+</header>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a Computer Science student passionate about software development,
+AI, cybersecurity, and building modern web applications.
+</p>
+</section>
+
+<section>
+<h2>Skills</h2>
+
+<div class="skills">
+<div class="card">Python</div>
+<div class="card">Java</div>
+<div class="card">C++</div>
+<div class="card">JavaScript</div>
+<div class="card">React</div>
+<div class="card">Node.js</div>
+<div class="card">SQL</div>
+<div class="card">Git & GitHub</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>AI Resume Analyzer</h3>
+<p>AI-powered resume review application.</p>
+</div>
+
+<div class="project">
+<h3>Task Management App</h3>
+<p>Full-stack productivity and collaboration platform.</p>
+</div>
+
+<div class="project">
+<h3>Cybersecurity Dashboard</h3>
+<p>Security monitoring and analytics dashboard.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+<p>GitHub: github.com/yourusername</p>
+<p>LinkedIn: linkedin.com/in/yourusername</p>
+</section>
+
+<footer>
+© 2026 Your Name | Computer Science Portfolio
+</footer>
+
+</body>
+</html>
