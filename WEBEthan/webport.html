@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ethan James | Portfolio</title>
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #211717;
+            color: white;
+        }
+
+        a {
+            color: rgb(221, 24, 24);
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #140c0c;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        header nav a {
+            margin-left: 15px;
+            color:white;
+        }
+
+        section { padding: 60px; }
+
+        .section-title {
+            text-align: center;
+            color: #f1e3e3;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        #home { display: flex; gap: 40px; align-items: center; }
+
+        #home h1 { font-size: 40px; margin-bottom: 10px; }
+        #home h2 { color: #d88e26; font-weight: normal; margin-bottom: 15px; }
+        #home p  { color: #dba3a3; margin-bottom: 20px; }
+
+        #home img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn {
+            border: 1px solid rgb(222, 25, 25);
+            padding: 10px 20px;
+        }
+        
+        .cards { display: flex; gap: 20px; }
+
+        .card {
+            flex: 1;
+            background-color: #6c4646;
+            border: 1px solid #ebe3e3;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card p { color: #010101; font-size: 14px; }
+
+        #about { display: flex; gap: 50px; align-items: center; }
+
+        #about h2 {
+            color: white;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        #about p { color: white; margin bottom: 20px; }
+
+        #about img {
+            width: 45%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .grid { display: flex; gap: 15px; }
+
+        .grid-item { flex: 1; }
+
+        .grid-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .grid-item h4 { margin: 8px 0 3px; font-size: 13px; }
+        .grid-item p  { color: white; font-size: 12px; margin: 0; }
+
+
+        input, textarea {
+            width: 100%;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #e1d9d9;
+            padding: 10px 0;
+            color: rgba(231, 232, 231, 0.612);
+            font-size: 14px;
+            font-family: Arial;
+            margin-bottom: 15px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        textarea { height: 90px; resize: none; }
+
+        button {
+            border: 1px solid white;
+            background: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: Arial;
+        }
+
+        .contact-info p { color: white; margin-bottom: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 13px;
+            border-top: 1px solid white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="ethan.image.jpg" alt="Ethan">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#work">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div>
+            <h1>Hello, I'm Ethan James.</h1>
+            <h2>Digital Creator</h2>
+            <p>I create digital content and visual stories that connect and inspire. Through thoughtful design and creative storytelling, I bring ideas to life in engaging and meaningful ways. My goal is to create content that resonates with audiences and leaves a lasting impact..</p>
+            <a href="#work" class="btn">Explore My Work</a>
+        </div>
+        <img src="ethan.image.jpg" alt="Ethan James">
+    </section>
+
+    <section id="services">
+        <p class="section-title">WHAT I DO</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Content Creation</h3>
+                <p>I produce content for social media, YouTube, and digital platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Video Editing</h3>
+                <p>I edit videos with creative storytelling and captivating visuals.</p>
+            </div>
+            <div class="card">
+                <h3>Visual Design</h3>
+                <p>I design thumbnails and visuals that elevate your content.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div>
+            <h2>ABOUT ME</h2>
+            <p>I'm a digital creator passionate about turning ideas into impactful content. I craft experiences that entertain, inform, and inspire.</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+        <img src="about.image.webp" alt="My Setup">
+    </section>
+
+    <section id="work">
+        <p class="section-title">FEATURED WORK</p>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="cinematic.image.jpg" alt="Cinematic Vlog">
+                <h4>Cinematic Vlog</h4>
+                <p>YouTube</p>
+            </div>
+            <div class="grid-item">
+                <img src="brand.image.jpg" alt="Brand Commercial">
+                <h4>Brand Commercial</h4>
+                <p>Short Film</p>
+            </div>
+            <div class="grid-item">
+                <img src="ytthumbnail.png" alt="YouTube Thumbnail">
+                <h4>YouTube Thumbnail</h4>
+                <p>Design</p>
+            </div>
+            <div class="grid-item">
+                <img src="travel.image.jpg" alt="Travel Documentary">
+                <h4>Travel Documentary</h4>
+                <p>YouTube</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <p class="section-title">LET'S CONNECT</p>
+        <div class="contact-row">
+            <div>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button>Send Message</button>
+            </div>
+            <div class="contact-info">
+                <p>Manila, Philippines</p>
+                <p>+63 912 345 6789</p>
+                <p>ethanjamesalegria@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>2024 Ethan James A. Legria. All rights reserved.</footer>
+
+</body>
+</html>
