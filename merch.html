@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merch — The Weeknd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <span class="logo">THE WEEKND</span>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="merch.html" class="active">Merch</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="page-hero">
+  <span class="eyebrow">Shop</span>
+  <h1>Merch</h1>
+  <p>Tap any photo for a closer look.</p>
+</header>
+
+<section class="wrap" style="padding:80px 32px 100px;">
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch4.png" data-name="XO Hoodie" data-price="$58.00">
+      <img src="merch4.png" alt="XO Hoodie">
+      <div class="gallery-overlay">
+        <div>
+          <h3>XO Hoodie</h3>
+          <span>$58.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch1.png" data-name="After Hours Tee" data-price="$32.00">
+      <img src="merch1.png" alt="After Hours Tee">
+      <div class="gallery-overlay">
+        <div>
+          <h3>After Hours Tee</h3>
+          <span>$32.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch2.png" data-name="Dawn FM Cap" data-price="$26.00">
+      <img src="merch2.png" alt="Dawn FM Cap">
+      <div class="gallery-overlay">
+        <div>
+          <h3>Dawn FM Cap</h3>
+          <span>$26.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch3.png" data-name="Starboy Vinyl" data-price="$40.00">
+      <img src="merch3.png" alt="Starboy Vinyl">
+      <div class="gallery-overlay">
+        <div>
+          <h3>Starboy Vinyl</h3>
+          <span>$40.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch5.png" data-name="Tour Tote Bag" data-price="$20.00">
+      <img src="merch5.png" alt="Tour Tote Bag">
+      <div class="gallery-overlay">
+        <div>
+          <h3>Tour Tote Bag</h3>
+          <span>$20.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(this)" data-img="merch6.png" data-name="House of Balloons Pin Set" data-price="$15.00">
+      <img src="merch6.png" alt="House of Balloons Pin Set">
+      <div class="gallery-overlay">
+        <div>
+          <h3>House of Balloons Pin Set</h3>
+          <span>$15.00</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption">
+      <h3 id="lightbox-name"></h3>
+      <p class="merch-price" id="lightbox-price"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="logo">XO</span>
+  <div class="links">
+    <a href="home.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="disclaimer">Unofficial fan tribute page. Not affiliated with Abel Tesfaye, XO, or Republic Records.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

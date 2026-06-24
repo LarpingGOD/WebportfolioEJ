@@ -1,0 +1,526 @@
+:root {
+    --bg:      #0a0908;
+    --surface: #161312;
+    --footer:  #1f1a19;
+    --ink:     #f2ede6;
+    --muted:   #948c89;
+    --red:     #c81e2c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+.eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+}
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+.btn-red {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 11px 24px;
+    background-color: var(--red);
+    color: #fff;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-red:hover { background-color: #a8141f; }
+
+/* === NAVIGATION === */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    transition: background 0.3s, padding 0.3s;
+}
+
+nav.scrolled {
+    background-color: rgba(10, 9, 8, 0.92);
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+}
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+
+.nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 1px;
+    background-color: var(--red);
+    transition: width 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--ink); }
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* === HOME HERO === */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #110d0d;     /* HERO BACKGROUND */
+}
+
+.hero-content { position: relative; z-index: 2; padding: 0 24px; }
+
+.hero h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(3rem, 9vw, 6.5rem);   /* HERO TITLE SIZE */
+    color: var(--ink);                      /* HERO TITLE COLOR */
+}
+
+.hero p {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.skyline {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 38%;
+    background-color: #000;
+    clip-path: polygon(0% 100%,0% 68%,4% 68%,4% 50%,8% 50%,8% 74%,13% 74%,13% 38%,18% 38%,18% 58%,23% 58%,23% 26%,28% 26%,28% 62%,34% 62%,34% 42%,39% 42%,39% 70%,45% 70%,45% 30%,51% 30%,51% 56%,57% 56%,57% 20%,63% 20%,63% 52%,69% 52%,69% 36%,75% 36%,75% 64%,81% 64%,81% 28%,87% 28%,87% 58%,93% 58%,93% 44%,100% 44%,100% 100%);
+}
+
+.scroll-cue {
+    position: absolute;
+    bottom: 34px; left: 50%;
+    transform: translateX(-50%);
+    width: 18px; height: 28px;
+    border: 1px solid rgba(242, 237, 230, 0.4);
+    border-radius: 10px;
+}
+
+.scroll-cue::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 50%;
+    transform: translateX(-50%);
+    width: 3px; height: 6px;
+    background-color: var(--red);
+    border-radius: 2px;
+}
+
+/* === PAGE HERO (Music / Merch / Contact) === */
+.page-hero {
+    padding: 170px 0 80px;
+    text-align: center;
+    background-color: #050404;     /* PAGE HEADER BACKGROUND */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.page-hero .eyebrow { display: block; margin-bottom: 14px; }
+
+.page-hero h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: var(--ink);
+}
+
+.page-hero p {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === ABOUT / TIMELINE === */
+.about {
+    padding: 120px 0;
+    background-color: var(--bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.about h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.timeline { list-style: none; counter-reset: timeline; }
+
+.timeline li {
+    position: relative;
+    padding-left: 50px;
+    padding-bottom: 28px;
+    margin-left: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.timeline li:last-child { padding-bottom: 0; }
+
+.timeline li::before {
+    counter-increment: timeline;
+    content: counter(timeline);
+    position: absolute;
+    left: -15px; top: -2px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background-color: var(--red);  /* TIMELINE CIRCLE COLOR */
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline strong { display: block; color: var(--ink); margin-bottom: 2px; }
+.timeline span { color: var(--muted); font-size: 0.85rem; }
+
+.map-embed { border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); }
+.map-embed iframe { width: 100%; height: 320px; border: 0; display: block; }
+
+/* === SPOTLIGHT === */
+.spotlight { padding: 120px 0; background-color: var(--surface); }
+.spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.track-art {
+    aspect-ratio: 1 / 1;
+    background-color: #1a1212;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-art svg { position: absolute; bottom: 0; left: 0; width: 100%; }
+
+.track-info h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 2.6rem;
+    margin: 10px 0 18px;
+}
+
+.track-info p { color: var(--muted); font-size: 0.98rem; max-width: 440px; }
+
+.meta-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 26px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.meta-row span { color: var(--ink); }
+
+/* === DISCOGRAPHY === */
+.albums { padding: 120px 0; background-color: var(--bg); }
+.albums-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
+
+.albums h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 2.8rem;
+}
+
+.carousel-controls { display: flex; gap: 10px; }
+
+.carousel-controls button {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(242, 237, 230, 0.25);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.carousel-controls button:hover { border-color: var(--red); color: var(--red); }
+
+.carousel {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar { display: none; }
+
+.album { flex: 0 0 220px; scroll-snap-align: start; cursor: pointer; }
+
+.album-art {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    transition: transform 0.3s;
+}
+
+.album:hover .album-art { transform: translateY(-6px); }
+.album h3 { font-size: 0.95rem; font-weight: 600; }
+.album span { font-size: 0.78rem; color: var(--muted); }
+
+/* fallback if image missing */
+.a1 { background: linear-gradient(150deg, #2b2b2b, #0e0e0e); }
+.a2 { background: linear-gradient(150deg, #8a5a1d, #2a1505); }
+.a3 { background: linear-gradient(150deg, #5e1c6e, #1c0a26); }
+.a4 { background: linear-gradient(150deg, #c81e2c, #290406); }
+.a5 { background: linear-gradient(150deg, #264a6e, #06121e); }
+.a6 { background: linear-gradient(150deg, #d9621e, #3a0f06); }
+
+/* === MUSIC — AUDIO + TRACK LIST === */
+.audio-preview { margin: 50px 0; }
+.audio-preview audio { width: 100%; accent-color: var(--red); }
+
+.track-list { margin-top: 10px; }
+
+.track-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s;
+}
+
+.track-row:hover { background-color: rgba(200, 30, 44, 0.05); }
+.track-left { display: flex; align-items: center; gap: 20px; }
+.track-num  { width: 26px; color: var(--muted); font-size: 0.85rem; }
+.track-name { font-weight: 600; font-size: 1.02rem; }
+.track-album { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+.track-year { color: var(--muted); font-size: 0.8rem; }
+
+/* === MUSIC — VIDEO === */
+.featured-video {
+    background-color: var(--surface);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.featured-video video { width: 100%; background-color: #000; }
+.featured-video-caption { padding: 20px 24px; }
+
+.featured-video-caption h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.featured-video-caption p { color: var(--muted); font-size: 0.85rem; }
+
+/* === MERCH — GALLERY === */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(10, 9, 8, 0.9), transparent 65%);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-overlay h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink);
+}
+
+.gallery-overlay span { display: block; color: var(--red); font-size: 0.8rem; margin-top: 4px; }
+
+/* === MERCH — LIGHTBOX === */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background-color: rgba(5, 4, 4, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-content {
+    max-width: 560px;
+    width: 100%;
+    background-color: var(--surface);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lightbox-content img { width: 100%; display: block; }
+.lightbox-caption { padding: 20px 24px; }
+
+.lightbox-caption h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.lightbox-caption p { color: var(--muted); font-size: 0.85rem; }
+.merch-price { color: var(--red); font-weight: 600; margin-top: 12px; }
+
+.lightbox-close {
+    position: absolute;
+    top: 24px; right: 32px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(242, 237, 230, 0.3);
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.lightbox-close:hover { border-color: var(--red); color: var(--red); }
+
+/* === CONTACT — FORM === */
+.contact-wrap { max-width: 520px; margin: 0 auto; padding-bottom: 140px; }
+.field { margin-bottom: 22px; }
+
+.field label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 2px;
+}
+
+.field input:focus,
+.field textarea:focus { outline: none; border-color: var(--red); }
+
+.form-msg { padding: 14px 16px; border-radius: 2px; margin-bottom: 24px; font-size: 0.85rem; }
+.form-msg.success { background-color: rgba(60, 150, 90, 0.1); border: 1px solid #3c965a; color: #a7e0bb; }
+.form-msg.error { background-color: rgba(200, 30, 44, 0.1); border: 1px solid var(--red); color: #f3a9ae; }
+
+/* === FOOTER === */
+footer {
+    padding: 70px 0 40px;
+    background-color: var(--footer);
+    text-align: center;
+}
+
+footer .logo { display: inline-block; margin-bottom: 14px; }
+
+footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 28px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+footer .links a:hover { color: var(--red); }
+footer .disclaimer { font-size: 0.72rem; color: #5e5856; max-width: 480px; margin: 0 auto; }
+
+/* === MOBILE === */
+@media (max-width: 760px) {
+    .spotlight-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .track-row { flex-wrap: wrap; gap: 8px; }
+}
